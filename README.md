@@ -11,6 +11,7 @@ The BeaconTransmitter class will be merged into the Android Beacon Library when 
 
 You must have an Android L development environment set up with Eclipse, and you must install the Android Beacon Library in Eclipse as a dependent Android Library project.
 
+A more full-featured version of this app called QuickBeacon is available in the Google Play store [here](https://play.google.com/store/apps/details?id=com.radiusnetworks.quickbeacon)
 
 ### Getting Google L on your device
 
