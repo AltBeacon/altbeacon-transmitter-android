@@ -5,8 +5,14 @@ beacon format as well.
 
 If you cannot see the transmission, make sure you have a tool that can detect AltBeacons, like the Android Locate app.  Otherwise, change the code to transmit as a different beacon type.
 
+The BeaconTransmitter class will be merged into the Android Beacon Library when Android L is released.
 
-### Getting Google L
+### Building the App
+
+You must have an Android L development environment set up with Eclipse, and you must install the Android Beacon Library in Eclipse as a dependent Android Library project.
+
+
+### Getting Google L on your device
 
 Google L is [downloadable from Google here.](https://developer.android.com/preview/setup-sdk.html)
 
