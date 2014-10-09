@@ -1,5 +1,8 @@
 package org.altbeacon.beacon.transmitter;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,12 +13,15 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import org.altbeacon.beacon.Beacon;
+import org.altbeacon.beacon.BeaconParser;
 import org.altbeacon.beacon.BeaconTransmitter;
+import org.altbeacon.beacon.Identifier;
 
 
 @TargetApi(21)
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
+    private BeaconTransmitter mBeaconTransmitter;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +29,29 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 		if (checkPrerequisites()) {
-			// Transmit an AltBeacon advertisement with Identifiers 2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6 1 2
+			
+			// Sets up to transmit as an AltBeacon-style beacon.  If you wish to transmit as a different
+			// type of beacon, simply provide a different parser expression.  To find other parser expressions, 
+			// for other beacon types, do a Google search for "setBeaconLayout" including the quotes
+			mBeaconTransmitter = new BeaconTransmitter(this, new BeaconParser().setBeaconLayout("m:2-3=beac,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
+			// Transmit a beacon with Identifiers 2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6 1 2
 			Beacon beacon = new Beacon.Builder()
 		              .setId1("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6")
 		              .setId2("1")
 		              .setId3("2")
-		              .setBeaconTypeCode(0xbeac) // 0xbeac is for AltBeacon.  Set to a different value to transmit as a different beacon type
 		              .setManufacturer(0x0000) // Choose a number of 0x00ff or less as some devices cannot detect beacons with a manufacturer code > 0x00ff
+		              .setTxPower(-59)
+		              .setDataFields(Arrays.asList(new Long[] {0l}))
 		              .build();
 			
-			new BeaconTransmitter(this, beacon).startAdvertising();
+			mBeaconTransmitter.startAdvertising(beacon);
 		}
+    }
+    
+    @Override
+    protected void onDestroy() {
+    	super.onDestroy();
+		mBeaconTransmitter.stopAdvertising();    	
     }
 
 	@TargetApi(21)

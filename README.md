@@ -5,11 +5,9 @@ beacon format as well.
 
 If you cannot see the transmission, make sure you have a tool that can detect AltBeacons, like the Android Locate app.  Otherwise, change the code to transmit as a different beacon type.
 
-The BeaconTransmitter class will be merged into the Android Beacon Library when Android L is released.
-
 ### Building the App
 
-You must have an Android L development environment set up with Eclipse, and you must install the Android Beacon Library in Eclipse as a dependent Android Library project.
+You must have an Android L development environment set up with Eclipse, and you must first build and install the android-l-apis branch of the Android Beacon Library in Eclipse as a dependent Android Library project.
 
 A more full-featured version of this app called QuickBeacon is available in the Google Play store [here](https://play.google.com/store/apps/details?id=com.radiusnetworks.quickbeacon)
 
