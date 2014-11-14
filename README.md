@@ -67,12 +67,12 @@ The code needed to transmit as a beacon with Android L’s android.bluetooth.le 
 
 ## How to set up transmitting 
 
-In order to tell Android to transmit a beacon byte sequence, you have to first get an instance of the BluetoothAdapter, and then use the brand new BluetoothLEAdvertiser class which gives you control of advertising.
+In order to tell Android to transmit a beacon byte sequence, you have to first get an instance of the BluetoothAdapter, and then use the brand new BluetoothLeAdvertiser class which gives you control of advertising.
 
 ```java
 BluetoothManager bluetoothManager = (BluetoothManager) this.getApplicationContext().getSystemService(Context.BLUETOOTH_SERVICE);
 BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();		
-BluetoothLEAdvertiser bluetoothAdvertiser = bluetoothAdapter.getBluetoothLeAdvertiser()
+BluetoothLeAdvertiser bluetoothAdvertiser = bluetoothAdapter.getBluetoothLeAdvertiser()
 ```
 
 We next need to set the advertisingBytes on the bluetoothAdvertiser.  The new APIs still allow you to set both ManufacturerData (which will be sent out with Bluetooth AD type 0xFF) and ServiceData (which will be sent out with Bluetooth AD type 0x16)  For the purposes of transmitting as a beacon, we must use the ManufacturerData, because devices looking for beacons expect to see the 0xFF Bluetooth AD type.
