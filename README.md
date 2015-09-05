@@ -1,5 +1,7 @@
 ## AltBeacon Transmitter
 
+**IMPORANT: This project was developed for the first preview release of Android L.  The APIs were changed in subsequent updates, so this project does not work with release versions of Android.**
+
 This app demonstrates how to use Android L APIs to transmit as a beacon.  By default it will transmit an AltBeacon advertisement, but can easily be modified to transmit any other
 beacon format as well.
 
@@ -55,6 +57,8 @@ Google L is [downloadable from Google here.](https://developer.android.com/previ
 </td></tr><tr><td>ADVERTISE_MODE_LOW_POWER
 </td><td>approx 10 Hz
 </td></tr></table>
+
+**UPDATE:**  The anomaly in thea above settings where ADVERTISE_MODE_LOW_POWER and ADVERTISE_MODE_LOW_LATENCY are reversed has been fixed in release versions of Android 5.  The above is accurate only for the preview version of Android L.
 
 ##Android L API Changes
 
