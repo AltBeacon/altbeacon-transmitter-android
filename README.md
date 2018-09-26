@@ -60,7 +60,7 @@ Google L is [downloadable from Google here.](https://developer.android.com/previ
 
 **UPDATE:**  The anomaly in thea above settings where ADVERTISE_MODE_LOW_POWER and ADVERTISE_MODE_LOW_LATENCY are reversed has been fixed in release versions of Android 5.  The above is accurate only for the preview version of Android L.
 
-##Android L API Changes
+## Android L API Changes
 
 All these changes are possible because Android now has brand new APIs for  interacting with Bluetooth LE under the android.bluetooth.le package documented [here](https://developer.android.com/preview/api-overview.html).
 To some extent, these appear to wrap the same Bluedroid drivers under the hood, but the changes are significant.  Source code for Nexus device configurations was released a few days ago, but the more important source code for the APIs is still not available, nor is full documentation.   
