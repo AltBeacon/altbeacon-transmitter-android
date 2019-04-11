@@ -11,8 +11,6 @@ If you cannot see the transmission, make sure you have a tool that can detect Al
 
 You must have an Android L development environment set up with Eclipse, and you must first build and install the android-l-apis branch of the Android Beacon Library in Eclipse as a dependent Android Library project.
 
-A more full-featured version of this app called QuickBeacon is available in the Google Play store [here](https://play.google.com/store/apps/details?id=com.radiusnetworks.quickbeacon)
-
 ### Getting Google L on your device
 
 Google L is [downloadable from Google here.](https://developer.android.com/preview/setup-sdk.html)
